@@ -1,27 +1,29 @@
 // Question 1 Find index of sum of two element
 
-let array = [2, 7, 11, 15];
-let target = 22;
+let arr = [2, 7, 8, 9];
+let target = 9;
 
-function sumOfTwoElement(array, target) {
-    let record = {}
+function findindexofsum(array, target) {
+    let result = {};
 
     for (let i = 0; i < array.length; i++) {
-        let currentElement = array[i];
-        let need = target - currentElement;
-
-        if (record[need] !== undefined) {
-            return [record[need], i];
+        let currentNumber = array[i];
+        let need = target - currentNumber;
+        // need = 9 - 2 = 7;
+        if (result[need] !== undefined) {
+            return [result[need], i];
         }
 
-        record[currentElement] = i;
+        result[currentNumber] = i;
     }
-};
-
-let result = sumOfTwoElement(array, target);
-if (result === undefined) {
-    console.log("Element Is Note Found!! To Sum Of Target Elements !");
-
-} else {
-    console.log(result);
 }
+
+let response = findindexofsum(arr, target);
+if (response === undefined) {
+    console.log("Element Is Note Found!! To Sum Of Target Elements !");
+}
+else {
+    console.log(response);
+}
+
+

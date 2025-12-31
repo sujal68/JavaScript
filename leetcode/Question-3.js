@@ -1,25 +1,23 @@
 // Question - 3 -> Find Duplicate Element on Array 
 
-let array = [1, 2, 3, 4, 5, 2, 5, 4, 1];
+let array = [1, 4, 6, 4, 1];
 
-function findAllDuplicates(arr) {
+function findDuplicate(array) {
     let seen = {};
-    let duplicates = [];
+    let duplicate = [];
 
-    for (let i = 0; i < arr.length; i++) {
-
-        if (seen[arr[i]] === 1) {
-            duplicates.push(arr[i]);
+    for (let i = 0; i < array.length; i++) {
+        if (seen[array[i]] === 1) {
+            duplicate.push(array[i]);
         }
-
-        if (seen[arr[i]]) {
-            seen[arr[i]]++;
+        if (seen[array[i]]) {
+            seen[array[i]]++;
         } else {
-            seen[arr[i]] = 1;
+            seen[array[i]] = 1;
         }
     }
-
-    return duplicates;
+    return duplicate;
 }
 
-console.log("The Duplicate Element", findAllDuplicates(array));
+let result = findDuplicate(array);
+console.log(result);
