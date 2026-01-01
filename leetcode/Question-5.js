@@ -7,12 +7,10 @@ function findFrequencyString(s) {
 
     for (let i = 0; i < s.length; i++) {
 
-        let ch = s[i];
-
-        if (freq[ch]) {
-            freq[ch]++;
+        if (freq[s[i]]) {
+            freq[s[i]]++;
         } else {
-            freq[ch] = 1;
+            freq[s[i]] = 1;
         }
     }
 

@@ -1,26 +1,34 @@
+// Question 2 Reverce Of single Array
+
 #include <iostream>
 using namespace std;
 
+void reverseArray(int a[], int n)
+{
+    int l = 0;
+    int r = n - 1;
+
+    while (l < r)
+    {
+        int temp = a[l];
+        a[l] = a[r];
+        a[r] = temp;
+
+        l++;
+        r--;
+    }
+}
+
 int main()
 {
-    int array[] = {98, 23, 56, 78, 25};
-    int length = sizeof(array) / sizeof(array[0]); // length = 5;
+    int a[] = {12, 65, 98, 34, 87, 43};
+    int n = sizeof(a) / sizeof(a[0]);
 
-    int left = 0;
-    int right = length - 1;
+    reverseArray(a, n);
 
-    while (left < right)
-    {
-        int temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
+    cout << "Reversed Array: ";
+    for (int i = 0; i < n; i++)
+        cout << a[i] << " ";
 
-        left++;
-        right--;
-    }
-
-    for (int i = 0; i < length; i++)
-    {
-        cout << array[i] << " ";
-    }
-};
+    return 0;
+}
